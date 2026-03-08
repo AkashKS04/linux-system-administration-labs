@@ -1,0 +1,172 @@
+Fundamentals of Red Hat Enterprise Linux – Personal Notes
+
+1. Vim Editor Basics
+
+Saving and Quitting
+:w      → Save (write)
+:wq or ZZ      → Save and quit
+
+Copy and Paste
+
+yy      → Copy (yank) a line
+p       → Paste below the cursor
+5p      → Paste the copied line 5 times
+
+Deleting Text
+
+dd      → Delete a line
+4dd     → Delete 4 lines
+d$      → Delete from cursor to end of line
+dw      → Delete a word
+
+Editing
+
+cw      → Change word
+u       → Undo last action
+2. Visual Mode in Vim
+v          → Character visual mode
+Shift + v  → Line visual mode
+Ctrl + v   → Block visual mode
+
+3. Useful Linux Commands
+
+whoami → Displays the current logged-in user
+command1 ; command2 → Executes both commands sequentially
+command1 && command2 → Executes command2 only if command1 succeeds
+echo $? → Shows return code of previous command
+
+Return Codes:
+0 → Command executed successfully
+1 → Command failed
+
+4. File and Text Commands
+cat      → Display contents of a file
+head     → Display first 10 lines of a file
+tail     → Display last 10 lines of a file
+history  → Show previously executed commands
+
+5. Piping
+command1 | command2
+
+Output of command1 becomes input for command2
+Example:
+ls | grep file
+
+6. Directory Commands
+cd → Change directory
+mkdir directory_name → Create a directory
+mkdir -pv hello/hi/go → Create nested directories
+ls -ld directory_name → Show directory details
+
+7. System Monitoring
+w → Shows users currently logged into the system
+
+8. Running Applications in Background
+firefox & → Runs program in background
+
+9. Command Line Shortcuts
+Esc + . → Recalls previous argument
+
+10. User Management
+usermod -g group_name username → Change user's primary group
+
+11. Pattern Searching
+grep pattern filename
+
+grep stands for Global Regular Expression Print
+Used to search for specific patterns in files
+
+12. Adding a User
+useradd username → Create a new user
+passwd username → Set password for user
+
+13. SSH Management
+SSH (Secure Shell) is a secure protocol used to connect to another computer remotely.
+
+Generate SSH key:
+ssh-keygen
+
+Copy SSH key to remote server:
+ssh-copy-id user@remotehost
+
+14. Linux Directory Structure
+/      → Root directory
+/home  → User home directories
+/root  → Root user home
+/bin   → Essential commands
+/sbin  → System admin commands
+/etc   → Configuration files
+/var   → Logs and variable data
+/tmp   → Temporary files
+/usr   → Applications and utilities
+/dev   → Device files
+
+15. File Permissions
+Permissions control access to files.
+
+r → read
+w → write
+x → execute
+
+Example:
+ls -l
+
+-rwxr-xr--
+User  Group  Others
+
+Change permissions:
+chmod 755 file.sh
+
+Make file executable:
+chmod +x script.sh
+
+16. Changing File Ownership
+Change owner:
+chown user file.txt
+
+Change owner and group:
+chown user:group file.txt
+
+17. Package Management (RHEL)
+Install package:
+sudo dnf install package_name
+
+Remove package:
+sudo dnf remove package_name
+
+Update packages:
+sudo dnf update
+
+Search package:
+dnf search package_name
+
+18. Process Management
+View running processes:
+ps -> process status
+ps aux
+
+Real-time monitoring:
+top
+
+Kill process:
+kill PID
+
+Force kill:
+kill -9 PID
+
+19. Networking Basics
+Check network interfaces:
+ip a
+
+Check connectivity:
+ping google.com
+
+Check open ports:
+ss -tuln
+
+20. Learning Resources
+man command → Shows manual page
+Example:
+man ls
+
+vimtutor → Interactive vim tutorial
